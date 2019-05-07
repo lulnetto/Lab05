@@ -16,11 +16,16 @@ public class Produto {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public String getDescricao() {
-        return descricao;
+        return this.descricao;
+    }
+
+    public double getPreco()
+    {
+        return this.preco;
     }
 
     public void setPreco(double preco) {

@@ -18,8 +18,8 @@ public class ControllerFornecedor {
         {
             return false;
         }
-        Fornecedor fornecedor = new Fornecedor(nome,email,telefone);
-        this.fornecedores.put(nome,fornecedor);
+        Fornecedor fornecedor = new Fornecedor(nome, email, telefone);
+        this.fornecedores.put(nome, fornecedor);
         return true;
     }
 
@@ -40,15 +40,15 @@ public class ControllerFornecedor {
             return "Nenhum fornecedor cadastrado.";
         } else
         {
-            for (Fornecedor fornecedor: fornecedores.values())
+            for (Fornecedor fornecedor : fornecedores.values())
             {
                 msg += fornecedor.toString() + " | ";
             }
-            return msg.substring(0,msg.length()-3);
+            return msg.substring(0, msg.length() - 3);
         }
     }
 
-    public  boolean editaFornecedorEmail(String nome, String email)
+    public boolean editaFornecedorEmail(String nome, String email)
     {
         if (!this.fornecedores.containsKey(nome))
         {
@@ -58,7 +58,7 @@ public class ControllerFornecedor {
         return true;
     }
 
-    public  boolean editaFornecedorTelefone(String nome, String telefone)
+    public boolean editaFornecedorTelefone(String nome, String telefone)
     {
         if (!this.fornecedores.containsKey(nome))
         {
@@ -106,6 +106,21 @@ public class ControllerFornecedor {
         return this.fornecedores.get(nomeFornecedor).exibeTodosProdutos();
     }
 
+    public String exibeTodosProdutoFornecedores()
+    {
+        String msg = "";
+        if (this.fornecedores.isEmpty())
+        {
+            return "Nenhum fornecedor cadastrado.";
+        } else {
+            for (Fornecedor fornecedor : fornecedores.values())
+            {
+                msg += fornecedor.exibeTodosProdutosFornecedores();
+            }
+            return msg.substring(0,msg.length()-3);
+        }
+    }
+
     public boolean editaPrecoProduto(String nomeFornecedor, String nome, String descricao, double preco)
     {
         if (!this.fornecedores.containsKey(nomeFornecedor))
@@ -115,6 +130,14 @@ public class ControllerFornecedor {
         return this.fornecedores.get(nomeFornecedor).editaPrecoProduto(nome, descricao, preco);
     }
 
+    public boolean removeProduto(String nomeForncedor, String nome, String descricao)
+    {
+        if (!this.fornecedores.containsKey(nomeForncedor))
+        {
+            return false;
+        }
+        return this.fornecedores.get(nomeForncedor).removeProduto(nome, descricao);
+    }
 
 
 }

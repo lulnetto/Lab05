@@ -21,7 +21,7 @@ public class Fornecedor {
     public boolean cadastraProduto(String nome, String descricao, double preco)
     {
         String chave = nome + descricao;
-        if (!this.produtos.containsKey(chave))
+        if (this.produtos.containsKey(chave))
         {
             return false;
         }
@@ -55,6 +55,22 @@ public class Fornecedor {
         return msg.substring(0,msg.length()-3);
     }
 
+    public String exibeTodosProdutosFornecedores()
+    {
+        String msg = "";
+        if (produtos.isEmpty())
+        {
+            return "Sem produtos cadastrados.";
+        } else
+        {
+            for (Produto produto: produtos.values())
+            {
+                msg += this.nome + produto.toString() + " | ";
+            }
+        }
+        return msg;
+    }
+
     public boolean editaPrecoProduto(String nome, String descricao, double preco)
     {
         String chave = nome + descricao;
@@ -63,6 +79,17 @@ public class Fornecedor {
             return false;
         }
         this.produtos.get(chave).setPreco(preco);
+        return true;
+    }
+
+    public boolean removeProduto(String nome, String descricao)
+    {
+        String chave = nome + descricao;
+        if (!this.produtos.containsKey(chave))
+        {
+            return false;
+        }
+        this.produtos.remove(chave);
         return true;
     }
 
