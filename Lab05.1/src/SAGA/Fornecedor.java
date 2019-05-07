@@ -1,5 +1,6 @@
 package SAGA;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -7,29 +8,38 @@ public class Fornecedor {
     private String nome;
     private String email;
     private String telefone;
-    private HashSet<Produto> produtos;
+    private HashMap<String, Produto> produtos;
 
     public Fornecedor(String nome, String email, String telefone)
     {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
-        this.produtos = new HashSet<>();
+        this.produtos = new HashMap<>();
     }
 
+    public boolean cadastraProduto(String nome, String descricao, double preco)
+    {
+        String chave = nome + descricao;
+        if (!this.produtos.containsKey(chave))
+        {
+            return false;
+        }
+        Produto produto = new Produto(nome, descricao, preco);
+        this.produtos.put(chave,produto);
+        return true;
+    }
     public String exibeProduto(String nome, String descricao)
     {
-        for (Produto produto: produtos)
+        String chave = nome + descricao;
+        if (!this.produtos.containsKey(chave))
         {
-            if (produto.getNome().equals(nome) && produto.getDescricao().equals(descricao))
-            {
-                return produto.toString();
-            }
+            return "Produto não cadastrado.";
         }
-        return "Produto não cadastrado.";
+        return this.produtos.get(chave).toString();
     }
 
-    public String exibeTodosProdutos(String nome, String descricao)
+    public String exibeTodosProdutos()
     {
         String msg = "";
         if (produtos.isEmpty())
@@ -37,25 +47,23 @@ public class Fornecedor {
             return "Sem produtos cadastrados.";
         } else
         {
-            for (Produto produto: produtos)
+            for (Produto produto: produtos.values())
             {
                 msg += produto.toString() + " | ";
             }
         }
-        return msg;
+        return msg.substring(0,msg.length()-3);
     }
 
     public boolean editaPrecoProduto(String nome, String descricao, double preco)
     {
-        for (Produto produto: produtos)
+        String chave = nome + descricao;
+        if (!this.produtos.containsKey(chave))
         {
-            if (produto.getNome().equals(nome) && produto.getDescricao().equals(descricao))
-            {
-                produto.setPreco(preco);
-                return true;
-            }
+            return false;
         }
-        return false;
+        this.produtos.get(chave).setPreco(preco);
+        return true;
     }
 
     public void setEmail(String email) {
@@ -64,6 +72,18 @@ public class Fornecedor {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public String getTelefone() {
+        return this.telefone;
     }
 
     @Override
