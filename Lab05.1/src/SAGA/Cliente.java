@@ -2,6 +2,11 @@ package SAGA;
 
 import java.util.Objects;
 
+/**
+ * Representacao de um cliente.
+ * @author Lourival Gonçalves Prata Netto - 119111236 - UFCG.
+ *
+ */
 public class Cliente {
 
     private String cpf;
@@ -9,6 +14,13 @@ public class Cliente {
     private String email;
     private String localizacao;
 
+    /**
+	 * Constroi um Cliente apatir do cpf, nome, email e local.
+	 * @param cpf cpf do cliente.
+	 * @param nome nome do cliente.
+	 * @param email email do cliente.
+	 * @param localizacao localizacao do cliente.
+	 */
     public Cliente(String cpf, String nome, String email, String localizacao)
     {
         this.cpf = cpf;
@@ -17,14 +29,26 @@ public class Cliente {
         this.localizacao = localizacao;
     }
 
+    /**
+	 * Seta um nome para o cliente.
+	 * @param nome nome do cliente.
+	 */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    /**
+	 * Seta um email para o cliente.
+	 * @param email email do cliente.
+	 */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+	 * Seta um local para o cliente.
+	 * @param localizacao local do cliente.
+	 */
     public void setLocalizacao(String localizacao) {
         this.localizacao = localizacao;
     }
