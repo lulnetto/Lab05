@@ -4,10 +4,11 @@ import java.util.Objects;
 
 /**
  * Representacao de um cliente.
- * @author Lourival Gonçalves Prata Netto - 119111236 - UFCG.
  *
+ * @author Lourival Gonçalves Prata Netto - 119111236 - UFCG.
  */
-public class Cliente {
+public class Cliente
+{
 
     private String cpf;
     private String nome;
@@ -15,12 +16,13 @@ public class Cliente {
     private String localizacao;
 
     /**
-	 * Constroi um Cliente apatir do cpf, nome, email e local.
-	 * @param cpf cpf do cliente.
-	 * @param nome nome do cliente.
-	 * @param email email do cliente.
-	 * @param localizacao localizacao do cliente.
-	 */
+     * Constroi um Cliente apatir do cpf, nome, email e local.
+     *
+     * @param cpf         cpf do cliente.
+     * @param nome        nome do cliente.
+     * @param email       email do cliente.
+     * @param localizacao localizacao do cliente.
+     */
     public Cliente(String cpf, String nome, String email, String localizacao)
     {
         this.cpf = cpf;
@@ -30,26 +32,32 @@ public class Cliente {
     }
 
     /**
-	 * Seta um nome para o cliente.
-	 * @param nome nome do cliente.
-	 */
-    public void setNome(String nome) {
+     * Seta um nome para o cliente.
+     *
+     * @param nome nome do cliente.
+     */
+    public void setNome(String nome)
+    {
         this.nome = nome;
     }
 
     /**
-	 * Seta um email para o cliente.
-	 * @param email email do cliente.
-	 */
-    public void setEmail(String email) {
+     * Seta um email para o cliente.
+     *
+     * @param email email do cliente.
+     */
+    public void setEmail(String email)
+    {
         this.email = email;
     }
 
     /**
-	 * Seta um local para o cliente.
-	 * @param localizacao local do cliente.
-	 */
-    public void setLocalizacao(String localizacao) {
+     * Seta um local para o cliente.
+     *
+     * @param localizacao local do cliente.
+     */
+    public void setLocalizacao(String localizacao)
+    {
         this.localizacao = localizacao;
     }
 
@@ -60,7 +68,8 @@ public class Cliente {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cliente cliente = (Cliente) o;
@@ -71,7 +80,8 @@ public class Cliente {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(cpf, nome, email, localizacao);
     }
 }

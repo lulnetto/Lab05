@@ -2,6 +2,7 @@ package SAGA;
 
 import java.util.HashMap;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 /**
  * Sistema contralador dos fornecedores.
@@ -58,18 +59,8 @@ public class ControllerFornecedor {
 	 */
     public String exibeFornecedoresCadastrados()
     {
-        String msg = "";
-        if (fornecedores.isEmpty())
-        {
-            return "Nenhum fornecedor cadastrado.";
-        } else
-        {
-            for (Fornecedor fornecedor : fornecedores.values())
-            {
-                msg += fornecedor.toString() + " | ";
-            }
-            return msg.substring(0, msg.length() - 3);
-        }
+        return fornecedores.values().stream().map(fornecedor -> fornecedor.toString()).collect(Collectors.joining(" | "));
+
     }
 
     /**
@@ -175,17 +166,7 @@ public class ControllerFornecedor {
 	 */
     public String exibeTodosProdutoFornecedores()
     {
-        String msg = "";
-        if (this.fornecedores.isEmpty())
-        {
-            return "Nenhum fornecedor cadastrado.";
-        } else {
-            for (Fornecedor fornecedor : fornecedores.values())
-            {
-                msg += fornecedor.exibeTodosProdutosFornecedores();
-            }
-            return msg.substring(0,msg.length()-3);
-        }
+        return fornecedores.values().stream().map(fornecedor -> fornecedor.exibeTodosProdutosFornecedores()).collect(Collectors.joining(" | "));
     }
 
     /**
@@ -207,9 +188,9 @@ public class ControllerFornecedor {
 
     /**
 	 * Remove um produto valido de um determinado fornecedor.
-	 * @param produto nome do produto.
+	 * @param nomeForncedor nome do produto.
 	 * @param descricao descricao do produto.
-	 * @param nomeFornecedor nome do fornecedor do produto.
+	 * @param nome nome do fornecedor do produto.
 	 * @return retorna um booleano True se o produto for removido com sucesso.
 	 */
     public boolean removeProduto(String nomeForncedor, String nome, String descricao)

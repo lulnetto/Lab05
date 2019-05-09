@@ -1,8 +1,10 @@
 package SAGA;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * Representacao do fornecedor.
@@ -29,6 +31,8 @@ public class Fornecedor {
         this.produtos = new HashMap<>();
     }
 
+
+
     /**
 	 * Cadastra um novo produto no fornecedor com base no seu nome, descricao e preco, e adiciona ao HashMap de produtos onde a chave é uma string composta pelo nome + descricao.
 	 * @param nome nome do produto.
@@ -38,6 +42,7 @@ public class Fornecedor {
 	 */
     public boolean cadastraProduto(String nome, String descricao, double preco)
     {
+
         String chave = nome + descricao;
         if (this.produtos.containsKey(chave))
         {
@@ -69,18 +74,12 @@ public class Fornecedor {
 	 */
     public String exibeTodosProdutos()
     {
-        String msg = "";
         if (produtos.isEmpty())
         {
             return "Sem produtos cadastrados.";
-        } else
-        {
-            for (Produto produto: produtos.values())
-            {
-                msg += produto.toString() + " | ";
-            }
         }
-        return msg.substring(0,msg.length()-3);
+        return produtos.values().stream().map(produto -> produto.toString()).collect(Collectors.joining(" | "));
+
     }
 
     /**
@@ -89,25 +88,18 @@ public class Fornecedor {
 	 */
     public String exibeTodosProdutosFornecedores()
     {
-        String msg = "";
-        if (produtos.isEmpty())
-        {
-            return "Sem produtos cadastrados.";
-        } else
-        {
-            for (Produto produto: produtos.values())
-            {
-                msg += this.nome + produto.toString() + " | ";
-            }
-        }
-        return msg;
+        return produtos.values().stream()
+
+                .map(produto -> produto.toString())
+                .collect(Collectors.joining(" | "));
+
     }
 
     /**
 	 * Edita o preco de um produto apartir do seu nome, descricao e do seu novo preco.
 	 * @param nome nome do produto.
      * @param descricao descricao do produto.
-	 * @param valor novo valor do produto.
+	 * @param preco novo valor do produto.
 	 * @return retorna um booleano True caso a edicao seja um sucesso.
 	 */
     public boolean editaPrecoProduto(String nome, String descricao, double preco)
