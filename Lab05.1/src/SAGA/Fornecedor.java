@@ -4,12 +4,23 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Objects;
 
+/**
+ * Representacao do fornecedor.
+ * @author Lourival Gonçalves Prata Netto - 119111236 - UFCG.
+ *
+ */
 public class Fornecedor {
     private String nome;
     private String email;
     private String telefone;
     private HashMap<String, Produto> produtos;
 
+    /**
+	 * Construtoi um novo fornecedor apatir do seu nome, email e telefone, e inicializa um HashMap de produtos desse fornecedor.
+	 * @param nome nome do fornecedor.
+	 * @param email email do fornecedor.
+	 * @param telefone telefone do fornecedor.
+	 */
     public Fornecedor(String nome, String email, String telefone)
     {
         this.nome = nome;
@@ -18,6 +29,13 @@ public class Fornecedor {
         this.produtos = new HashMap<>();
     }
 
+    /**
+	 * Cadastra um novo produto no fornecedor com base no seu nome, descricao e preco, e adiciona ao HashMap de produtos onde a chave é uma string composta pelo nome + descricao.
+	 * @param nome nome do produto.
+     * @param descricao descricao do produto.
+     * @param preco preco do produto.
+	 * @return um booleano caso o produto seja adicionado com sucesso.
+	 */
     public boolean cadastraProduto(String nome, String descricao, double preco)
     {
         String chave = nome + descricao;
@@ -29,6 +47,12 @@ public class Fornecedor {
         this.produtos.put(chave,produto);
         return true;
     }
+    /**
+	 * Exibe um produto apatir do seu nome e descricao.
+	 * @param nome nome do produto.
+     * @param descricao descricao do produto.
+	 * @return uma String no formato PRODUTO - DESCRICAO - PRECO.
+	 */
     public String exibeProduto(String nome, String descricao)
     {
         String chave = nome + descricao;
@@ -39,6 +63,10 @@ public class Fornecedor {
         return this.produtos.get(chave).toString();
     }
 
+    /**
+	 * Exibe todos os produtos já cadastrados de um determinado fornecedor.
+	 * @return uma String no formato PRODUTO - DESCRICAO - PRECO | PRODUTO - DESCRICAO - PRECO.
+	 */
     public String exibeTodosProdutos()
     {
         String msg = "";
@@ -55,6 +83,10 @@ public class Fornecedor {
         return msg.substring(0,msg.length()-3);
     }
 
+    /**
+	 * Exibe todos os produtos já cadastrados de todos os fornecedores.
+	 * @return uma String no formato PRODUTO - DESCRICAO - PRECO | PRODUTO - DESCRICAO - PRECO.
+	 */
     public String exibeTodosProdutosFornecedores()
     {
         String msg = "";
@@ -71,6 +103,13 @@ public class Fornecedor {
         return msg;
     }
 
+    /**
+	 * Edita o preco de um produto apartir do seu nome, descricao e do seu novo preco.
+	 * @param nome nome do produto.
+     * @param descricao descricao do produto.
+	 * @param valor novo valor do produto.
+	 * @return retorna um booleano True caso a edicao seja um sucesso.
+	 */
     public boolean editaPrecoProduto(String nome, String descricao, double preco)
     {
         String chave = nome + descricao;
@@ -82,6 +121,12 @@ public class Fornecedor {
         return true;
     }
 
+    /**
+	 * Remove um produto do fornecedor apartir do nome do produto e sua descricao.
+	 * @param nome nome do produto.
+     * @param descricao descricao do produto.
+	 * @return retorna um booleano True caso o produto seja removido com sucesso.
+	 */
     public boolean removeProduto(String nome, String descricao)
     {
         String chave = nome + descricao;
@@ -93,10 +138,18 @@ public class Fornecedor {
         return true;
     }
 
+    /**
+	 * Seta um email para o fornecedor.
+	 * @param email novo email.
+	 */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+	 * Seta um telefone para o fornecedor.
+	 * @param telefone novo telefone.
+	 */
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
