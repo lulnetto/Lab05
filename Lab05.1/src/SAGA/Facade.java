@@ -82,7 +82,7 @@ public class Facade {
 
     public String exibeTodosProduto(String nomeFornecedor, String nome, String descricao)
     {
-        return cf.exibeTodosProduto(nomeFornecedor, nome, descricao);
+        return cf.exibeTodosProduto(nomeFornecedor);
     }
 
     public String exibeTodosProdutoFornecedores()

@@ -1,87 +1,131 @@
 package SAGA;
 
+import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
+/**
+ * Sistema controlador dos clientes.
+ * @author Lourival Gonçalves Prata Netto - 119111236 - UFCG.
+ *
+ */
 public class ControllerCliente {
 
-    private TreeMap<String, Cliente> clientes;
+    private Map<String, Cliente> clientes;
 
+    /**
+	 * Construtor que inicializa um TreeMap de clientes.
+	 */
     public  ControllerCliente()
     {
         this.clientes = new TreeMap<>();
     }
 
+    /**
+	 * Adiciona um novo cliente valido apartir do seu cpf, nome, email e localizacao.
+	 * 
+	 * @param cpf cpf do cliente.
+	 * @param nome nome do cliente.
+	 * @param email email do cliente.
+	 * @param localizacao localizacao do cliente.
+	 * @return retorna o CPF se o cliente for cadastrado com sucesso.
+	 */
     public String cadastraCliente(String cpf, String nome, String email, String localizacao)
     {
         if (clientes.containsKey(cpf))
         {
-         throw new IllegalArgumentException("Cliente já cadastrado.");
+         throw new IllegalArgumentException("Erro no cadastro do cliente: cliente ja existe.");
         }
         Cliente cliente = new Cliente(cpf, nome, email, localizacao);
         this.clientes.put(cpf,cliente);
         return cpf;
     }
 
+    /**
+	 * Exibe um cliente valido apartir do seu cpf.
+	 * 
+	 * @param cpf cpf do cliente.
+	 * @return uma string que representa o cliente no formato NOME - LOCALIZACAO - EMAIL, ou Cliente não cadastrado. em demais casos.
+	 */
     public String exibeCliente(String cpf)
     {
         if (!this.clientes.containsKey(cpf))
         {
-            return "Cliente não cadastrado.";
+            throw new IllegalArgumentException("Erro na exibicao do cliente: cliente nao existe.");
         }
         return this.clientes.get(cpf).toString();
     }
 
+     /**
+	 * Exibe todos clientes cadastrados.
+	 * 
+	 * @return uma string que representa todos os clientes no formato NOME - LOCALIZACAO - EMAIL | NOME - LOCALIZACAO - EMAIL.
+	 */
     public String exibeClientesCadastrados()
     {
-        String msg = "";
-        if (clientes.isEmpty())
+
+        return clientes.values().stream().map(cliente -> cliente.toString()).collect(Collectors.joining(" | "));
+//        String msg = "";
+//        if (clientes.isEmpty())
+//        {
+//            return "Nenhum cliente cadastrado.";
+//        } else
+//        {
+//            for (Cliente cliente: clientes.values())
+//            {
+//                msg += cliente.toString() + " | ";
+//            }
+//            return msg.substring(0, msg.length() - 3);
+//        }
+    }
+
+    /**
+     * Altera os atributos de um cliente.
+     * @param cpf cpf do cliente que quer alteração.
+     * @param atributo qual atributo ele quer alterar.
+     * @param novoAtributo qual o novo atributo.
+     * @return return true caso a alteração ocorra com sucesso.
+     */
+    public boolean alteraCliente(String cpf, String atributo, String novoAtributo)
+    {
+        if (!clientes.containsKey(cpf))
         {
-            return "Nenhum cliente cadastrado.";
-        } else
+            throw new IllegalArgumentException("Erro na edicao do cliente: cliente nao existe.");
+        } else if (atributo == null || "".equals(atributo.trim()))
         {
-            for (Cliente cliente: clientes.values())
+            throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
+        } else if (novoAtributo == null || "".equals(novoAtributo.trim()))
+        {
+            throw new IllegalArgumentException("Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
+        } else {
+            switch (atributo)
             {
-                msg += cliente.toString() + " | ";
+                case "nome":
+                    this.clientes.get(cpf).setNome(novoAtributo);
+                    return true;
+                case "email":
+                    this.clientes.get(cpf).setEmail(novoAtributo);
+                    return true;
+                case "localizacao":
+                    this.clientes.get(cpf).setLocalizacao(novoAtributo);
+                    return true;
+                default:
+                    throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao existe.");
             }
-            return msg.substring(0, msg.length() - 3);
         }
     }
 
-    public boolean alteraNomeCliente(String cpf, String nome)
-    {
-        if (!this.clientes.containsKey(cpf))
-        {
-            return false;
-        }
-        this.clientes.get(cpf).setNome(nome);
-        return true;
-    }
-
-    public boolean alteraEmailCliente(String cpf, String email)
-    {
-        if (!this.clientes.containsKey(cpf))
-        {
-            return false;
-        }
-        this.clientes.get(cpf).setEmail(email);
-        return true;
-    }
-
-    public boolean alteraLocalizacaoCliente(String cpf, String localizacao)
-    {
-        if (!this.clientes.containsKey(cpf))
-        {
-            return false;
-        }
-        this.clientes.get(cpf).setLocalizacao(localizacao);
-        return true;
-    }
-
+    /**
+	 * Remove um cliente valido apartir do seu cpf.
+	 * 
+	 * @param cpf cpf do cliente.
+	 * @return retorna um booleano True se a remocao do cliente for um sucesso.
+	 */
     public boolean removeCliente(String cpf)
     {
         if (!this.clientes.containsKey(cpf))
         {
-            return false;
+            throw new IllegalArgumentException("Erro na exibicao do cliente: cliente nao existe.");
         }
         this.clientes.remove(cpf);
         return true;

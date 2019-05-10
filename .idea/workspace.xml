@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="05104b87-fde5-4684-925b-e0b0aecd4068" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="a45d27d5-efe4-49dd-b991-9da8b61f1a88" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Lab05.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab05.1/Lab05.1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab05.1/Lab05.1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab05.1/src/SAGA/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab05.1/src/SAGA/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab05.1/src/SAGA/ControllerCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab05.1/src/SAGA/ControllerCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab05.1/src/SAGA/ControllerFornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab05.1/src/SAGA/ControllerFornecedor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab05.1/src/SAGA/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab05.1/src/SAGA/Facade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab05.1/src/SAGA/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lab05.1/src/SAGA/Fornecedor.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,6 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
+<<<<<<< HEAD
     <session id="-183504918">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
@@ -28,29 +44,230 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+=======
+    <session id="1591637189">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="java" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="503" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="503" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/Cliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-302">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/ControllerCliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/ControllerFornecedor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="57" column="76" selection-start-line="57" selection-start-column="76" selection-end-line="57" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/Fornecedor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="91" selection-start-line="91" selection-end-line="91" />
+              <folding>
+                <element signature="e#4377#4378#0" expanded="true" />
+                <element signature="e#4411#4412#0" expanded="true" />
+                <element signature="e#4547#4548#0" expanded="true" />
+                <element signature="e#4587#4588#0" expanded="true" />
+                <element signature="e#4618#4619#0" expanded="true" />
+                <element signature="e#4650#4651#0" expanded="true" />
+                <element signature="e#4682#4683#0" expanded="true" />
+                <element signature="e#4715#4716#0" expanded="true" />
+                <element signature="e#4750#4751#0" expanded="true" />
+                <element signature="e#4786#4787#0" expanded="true" />
+                <element signature="e#4832#4833#0" expanded="true" />
+                <element signature="e#4909#4910#0" expanded="true" />
+                <element signature="e#5316#5317#0" expanded="true" />
+                <element signature="e#5374#5375#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lab05.1/tests/SAGA/ProdutoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="35" selection-start-column="35" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/FornecedorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/Facade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3">
+              <caret line="63" column="58" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/Produto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Lab05.1/src/SAGA/ControllerCliente.java" />
+        <option value="$PROJECT_DIR$/Lab05.1/src/SAGA/Facade.java" />
+        <option value="$PROJECT_DIR$/Lab05.1/src/SAGA/FornecedorTest.java" />
+        <option value="$PROJECT_DIR$/Lab05.1/src/SAGA/Fornecedor.java" />
+        <option value="$PROJECT_DIR$/Lab05.1/src/SAGA/ControllerFornecedor.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="67" />
+    <option name="y" value="27" />
+    <option name="width" value="1853" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
+=======
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Lab05" type="b2602c69:ProjectViewProjectNode" />
+<<<<<<< HEAD
               <item name="Lab05" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="Lab05.1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab05" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab05.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab05" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab05.1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SAGA" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557413216185" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="SAGA" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -64,11 +281,38 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="RunManager">
+    <configuration name="FornecedorTest.exibeTodosProdutosFornecedores" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab05.1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SAGA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="SAGA" />
+      <option name="MAIN_CLASS_NAME" value="SAGA.FornecedorTest" />
+      <option name="METHOD_NAME" value="exibeTodosProdutosFornecedores" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FornecedorTest.exibeTodosProdutosFornecedores" />
+      </list>
+    </recent_temporary>
+  </component>
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="05104b87-fde5-4684-925b-e0b0aecd4068" name="Default Changelist" comment="" />
       <created>1556907322310</created>
       <option name="number" value="Default" />
@@ -79,20 +323,61 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+=======
+      <changelist id="a45d27d5-efe4-49dd-b991-9da8b61f1a88" name="Default Changelist" comment="" />
+      <created>1557410869800</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557410869800</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="FornecedorTest_exibeTodosProdutosFornecedores - 2019.05.09 at 11h 25m 26s.xml">
+      <configuration name="FornecedorTest.exibeTodosProdutosFornecedores" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FornecedorTest_exibeTodosProdutosFornecedores - 2019.05.09 at 11h 26m 03s.xml">
+      <configuration name="FornecedorTest.exibeTodosProdutosFornecedores" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FornecedorTest_exibeTodosProdutosFornecedores - 2019.05.09 at 11h 28m 44s.xml">
+      <configuration name="FornecedorTest.exibeTodosProdutosFornecedores" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FornecedorTest_exibeTodosProdutosFornecedores - 2019.05.09 at 11h 31m 26s.xml">
+      <configuration name="FornecedorTest.exibeTodosProdutosFornecedores" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FornecedorTest_exibeTodosProdutosFornecedores - 2019.05.09 at 11h 38m 14s.xml">
+      <configuration name="FornecedorTest.exibeTodosProdutosFornecedores" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="27" width="1853" height="1053" extended-state="0" />
+    <editor active="true" />
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
+=======
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -110,11 +395,105 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-302">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-1.11.0-openjdk-amd64!/java.base/java/util/function/Function.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/Produto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/ControllerCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="63" column="58" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/ControllerFornecedor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="57" column="76" selection-start-line="57" selection-start-column="76" selection-end-line="57" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/FornecedorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab05.1/tests/SAGA/ProdutoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab05.1/src/SAGA/Fornecedor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+          <folding>
+            <element signature="e#4377#4378#0" expanded="true" />
+            <element signature="e#4411#4412#0" expanded="true" />
+            <element signature="e#4547#4548#0" expanded="true" />
+            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#4618#4619#0" expanded="true" />
+            <element signature="e#4650#4651#0" expanded="true" />
+            <element signature="e#4682#4683#0" expanded="true" />
+            <element signature="e#4715#4716#0" expanded="true" />
+            <element signature="e#4750#4751#0" expanded="true" />
+            <element signature="e#4786#4787#0" expanded="true" />
+            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="e#4909#4910#0" expanded="true" />
+            <element signature="e#5316#5317#0" expanded="true" />
+            <element signature="e#5374#5375#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">
         <settings>
+<<<<<<< HEAD
           <last-edited>11</last-edited>
+=======
+          <last-edited>10</last-edited>
+>>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
           <splitter-proportions>
             <option name="proportions">
               <list>

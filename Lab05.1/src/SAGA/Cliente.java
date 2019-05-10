@@ -2,30 +2,81 @@ package SAGA;
 
 import java.util.Objects;
 
-public class Cliente {
+/**
+ * Representacao de um cliente.
+ *
+ * @author Lourival Gonçalves Prata Netto - 119111236 - UFCG.
+ */
+public class Cliente
+{
 
     private String cpf;
     private String nome;
     private String email;
     private String localizacao;
 
+    /**
+     * Constroi um Cliente apatir do cpf, nome, email e local.
+     *
+     * @param cpf         cpf do cliente.
+     * @param nome        nome do cliente.
+     * @param email       email do cliente.
+     * @param localizacao localizacao do cliente.
+     */
     public Cliente(String cpf, String nome, String email, String localizacao)
     {
+        if(nome == null || "".equals(nome.trim())) {
+            throw new IllegalArgumentException("Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
+        }else if(email == null || "".equals(email.trim())) {
+            throw new IllegalArgumentException("Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
+        }else if(localizacao == null || "".equals(localizacao.trim())) {
+            throw new IllegalArgumentException("Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.");
+        }else if(cpf == null || cpf.length() != 11) {
+            throw new IllegalArgumentException("Erro no cadastro do cliente: cpf invalido.");
+        }
+
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;
         this.localizacao = localizacao;
     }
 
-    public void setNome(String nome) {
+    /**
+     * Altera um nome para o cliente.
+     *
+     * @param nome nome do cliente.
+     */
+    public void setNome(String nome)
+    {
+        if(nome == null || "".equals(nome.trim())) {
+            throw new IllegalArgumentException("Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
+        }
         this.nome = nome;
     }
 
-    public void setEmail(String email) {
+    /**
+     * Altera um email para o cliente.
+     *
+     * @param email email do cliente.
+     */
+    public void setEmail(String email)
+    {
+        if(email == null || "".equals(email.trim())) {
+            throw new IllegalArgumentException("Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
+        }
         this.email = email;
     }
 
-    public void setLocalizacao(String localizacao) {
+    /**
+     * Altera a localizacao de trabalho para o cliente.
+     *
+     * @param localizacao local do cliente.
+     */
+    public void setLocalizacao(String localizacao)
+    {
+        if(localizacao == null || "".equals(localizacao.trim())) {
+            throw new IllegalArgumentException("Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.");
+        }
         this.localizacao = localizacao;
     }
 
@@ -36,7 +87,8 @@ public class Cliente {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cliente cliente = (Cliente) o;
@@ -47,7 +99,8 @@ public class Cliente {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(cpf, nome, email, localizacao);
     }
 }

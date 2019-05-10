@@ -15,23 +15,42 @@ public class Produto {
         this.preco = preco;
     }
 
+    /**
+	 * Pega o nome do produto.
+	 * @return retorna o nome do produto.
+	 */
     public String getNome() {
         return this.nome;
     }
 
+    /**
+	 * Pega a descricao do produto.
+	 * @return retorna a descricao do produto.
+	 */
     public String getDescricao() {
         return this.descricao;
     }
 
+    /**
+	 * Pega o preco do produto.
+	 * @return retorna o preco do produto.
+	 */
     public double getPreco()
     {
         return this.preco;
     }
-
+    /**
+	 * Seta um novo preco do Produto.
+	 * @param preco novo preco ou fator de desconto do Produto.
+	 */
     public void setPreco(double preco) {
         this.preco = preco;
     }
 
+    /**
+	 * Representacao do Produto em String.
+	 * @return retorna uma String que representa o Produto.
+	 */
     @Override
     public String toString() {
         return this.nome + " - " + this.descricao + " - R$" + this.preco;
