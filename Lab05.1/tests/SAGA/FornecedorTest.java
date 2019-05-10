@@ -1,19 +1,67 @@
+package SAGA;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FornecedorTest
-{
+class FornecedorTest {
 
-    Fornecedor f = new Fornecedor("Seu Olavo","shausha","465465");
+    @Test
+    void getNome()
+    {
+        Fornecedor f = new Fornecedor("nome", "email", "telefone");
+        assertEquals("nome",f.getNome());
+    }
+
+    @Test
+    void getEmail()
+    {
+        Fornecedor f = new Fornecedor("nome", "email", "telefone");
+        assertEquals("email",f.getEmail());
+    }
+
+    @Test
+    void getTelefone()
+    {
+        Fornecedor f = new Fornecedor("nome", "email", "telefone");
+        assertEquals("telefone",f.getTelefone());
+    }
+
+    @Test
+    void testtoString()
+    {
+        Fornecedor f = new Fornecedor("nome", "email", "telefone");
+        assertEquals("nome - email - telefone",f.toString());
+    }
+
+    @Test
+    void cadastraProduto()
+    {
+    }
+
+    @Test
+    void exibeProduto()
+    {
+    }
+
+    @Test
+    void exibeTodosProdutos()
+    {
+    }
 
     @Test
     void exibeTodosProdutosFornecedores()
     {
-        f.cadastraProduto("Cuzcuz","Milho",7);
-        f.cadastraProduto("Cuzcuz2","Milho",7);
-        f.cadastraProduto("Cuzcuz3","Milho",7);
-        String msg = "Cuzcuz - Milho - R$7.0 | Cuzcuz3 - Milho - R$7.0 | Cuzcuz2 - Milho - R$7.0";
-        Assertions.assertEquals(msg,f.exibeTodosProdutosFornecedores());
+    }
+
+    @Test
+    void editaPrecoProduto()
+    {
+    }
+
+    @Test
+    void removeProduto()
+    {
     }
 }

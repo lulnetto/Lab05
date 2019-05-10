@@ -1,10 +1,24 @@
 package SAGA;
 
+import easyaccept.EasyAccept;
+
 public class Facade {
     private ControllerCliente cc;
     private ControllerFornecedor cf;
 
-    public String cadastraCliente(String cpf, String nome, String email, String localizacao)
+    public static void main(String[] args)
+    {
+        args = new String[]{"SAGA.Facade","acceptance_test/use_case_1.txt","acceptance_test/use_case_2.txt","acceptance_test/use_case_3.txt"};
+        EasyAccept.main(args);
+    }
+
+    public Facade()
+    {
+        this.cc = new ControllerCliente();
+        this.cf = new ControllerFornecedor();
+    }
+
+    public String adicionaCliente(String cpf, String nome, String email, String localizacao)
     {
         return cc.cadastraCliente(cpf, nome, email, localizacao);
     }
@@ -19,19 +33,9 @@ public class Facade {
         return cc.exibeClientesCadastrados();
     }
 
-    public boolean alteraNomeCliente(String cpf, String nome)
+    public boolean editaCliente(String cpf, String atributo, String novoValor)
     {
-        return cc.alteraNomeCliente(cpf, nome);
-    }
-
-    public boolean alteraEmailCliente(String cpf, String email)
-    {
-        return cc.alteraEmailCliente(cpf, email);
-    }
-
-    public boolean alteraLocalizacaoCliente(String cpf, String localizacao)
-    {
-        return cc.alteraLocalizacaoCliente(cpf, localizacao);
+        return cc.editaCliente(cpf, atributo, novoValor);
     }
 
     public boolean removeCliente(String cpf)
@@ -39,9 +43,9 @@ public class Facade {
         return cc.removeCliente(cpf);
     }
 
-    public boolean cadastraFornecedor(String nome, String email, String telefone)
+    public String adicionaFornecedor(String nome, String email, String telefone)
     {
-        return cf.cadastraFornecedor(nome, email, telefone);
+        return cf.adicionaFornecedor(nome, email, telefone);
     }
 
     public String exibeFornecedor(String nome)
@@ -54,14 +58,9 @@ public class Facade {
         return cf.exibeFornecedoresCadastrados();
     }
 
-    public boolean editaFornecedorEmail(String nome, String email)
+    public boolean editaFornecedor(String nome, String atributo, String novoValor)
     {
-        return cf.editaFornecedorEmail(nome, email);
-    }
-
-    public boolean editaFornecedorTelefone(String nome, String telefone)
-    {
-        return cf.editaFornecedorTelefone(nome, telefone);
+        return cf.editaFornecedor(nome, atributo, novoValor);
     }
 
     public boolean removeFornecedor(String nome)
@@ -69,15 +68,15 @@ public class Facade {
         return cf.removeFornecedor(nome);
     }
 
-    public boolean cadastraProduto(String nomeFornecedor, String nome, String descricao, double preco)
+    public boolean adicionaProduto(String fornecedor, String nome, String descricao, double preco)
     {
-        return cf.cadastraProduto(nomeFornecedor, nome, descricao, preco);
+        return cf.adicionaProduto(fornecedor, nome, descricao, preco);
 
     }
 
-    public String exibeProduto(String nomeFornecedor, String nome, String descricao)
+    public String exibeProduto(String nome, String descricao, String fornecedor)
     {
-        return cf.exibeProduto(nomeFornecedor, nome, descricao);
+        return cf.exibeProduto(nome, descricao, fornecedor);
     }
 
     public String exibeTodosProduto(String nomeFornecedor, String nome, String descricao)
@@ -90,14 +89,14 @@ public class Facade {
         return cf.exibeTodosProdutoFornecedores();
     }
 
-    public boolean editaPrecoProduto(String nomeFornecedor, String nome, String descricao, double preco)
+    public boolean editaProduto(String nome, String descricao, String fornecedor, double novoPreco)
     {
-        return cf.editaPrecoProduto(nomeFornecedor, nome, descricao, preco);
+        return cf.editaProduto(fornecedor, nome, descricao, novoPreco);
     }
 
-    public boolean removeProduto(String nomeForncedor, String nome, String descricao)
+    public boolean removeProduto(String nome, String descricao,String fornecedor)
     {
-        return cf.removeProduto(nomeForncedor, nome, descricao);
+        return cf.removeProduto(fornecedor, nome, descricao);
     }
 
 

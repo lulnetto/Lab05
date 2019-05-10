@@ -105,7 +105,7 @@ public class Fornecedor {
         String chave = nome + descricao;
         if (this.produtos.containsKey(chave))
         {
-            return false;
+            throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
         }
         Produto produto = new Produto(nome, descricao, preco);
         this.produtos.put(chave,produto);
@@ -122,7 +122,7 @@ public class Fornecedor {
         String chave = nome + descricao;
         if (!this.produtos.containsKey(chave))
         {
-            return "Produto não cadastrado.";
+            throw new NullPointerException("Erro na exibicao de produto: produto nao existe.");
         }
         return this.produtos.get(chave).toString();
     }
@@ -166,7 +166,7 @@ public class Fornecedor {
         String chave = nome + descricao;
         if (!this.produtos.containsKey(chave))
         {
-            return false;
+            throw new NullPointerException("Erro na edicao de produto: produto nao existe.");
         }
         this.produtos.get(chave).setPreco(preco);
         return true;
@@ -183,7 +183,7 @@ public class Fornecedor {
         String chave = nome + descricao;
         if (!this.produtos.containsKey(chave))
         {
-            return false;
+            throw new NullPointerException("Erro na remocao de produto: produto nao existe.");
         }
         this.produtos.remove(chave);
         return true;

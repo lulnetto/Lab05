@@ -65,28 +65,17 @@ public class ControllerCliente {
     {
 
         return clientes.values().stream().map(cliente -> cliente.toString()).collect(Collectors.joining(" | "));
-//        String msg = "";
-//        if (clientes.isEmpty())
-//        {
-//            return "Nenhum cliente cadastrado.";
-//        } else
-//        {
-//            for (Cliente cliente: clientes.values())
-//            {
-//                msg += cliente.toString() + " | ";
-//            }
-//            return msg.substring(0, msg.length() - 3);
-//        }
+
     }
 
     /**
      * Altera os atributos de um cliente.
      * @param cpf cpf do cliente que quer alteração.
      * @param atributo qual atributo ele quer alterar.
-     * @param novoAtributo qual o novo atributo.
+     * @param novoValor qual o novo atributo.
      * @return return true caso a alteração ocorra com sucesso.
      */
-    public boolean alteraCliente(String cpf, String atributo, String novoAtributo)
+    public boolean editaCliente(String cpf, String atributo, String novoValor)
     {
         if (!clientes.containsKey(cpf))
         {
@@ -94,20 +83,20 @@ public class ControllerCliente {
         } else if (atributo == null || "".equals(atributo.trim()))
         {
             throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
-        } else if (novoAtributo == null || "".equals(novoAtributo.trim()))
+        } else if (novoValor == null || "".equals(novoValor.trim()))
         {
             throw new IllegalArgumentException("Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
         } else {
             switch (atributo)
             {
                 case "nome":
-                    this.clientes.get(cpf).setNome(novoAtributo);
+                    this.clientes.get(cpf).setNome(novoValor);
                     return true;
                 case "email":
-                    this.clientes.get(cpf).setEmail(novoAtributo);
+                    this.clientes.get(cpf).setEmail(novoValor);
                     return true;
                 case "localizacao":
-                    this.clientes.get(cpf).setLocalizacao(novoAtributo);
+                    this.clientes.get(cpf).setLocalizacao(novoValor);
                     return true;
                 default:
                     throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao existe.");

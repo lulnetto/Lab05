@@ -4,30 +4,30 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ProdutoTest {
+class ControllerClienteTest {
 
     @Test
-    void getNome()
+    void cadastraCliente()
     {
     }
 
     @Test
-    void getDescricao()
+    void exibeCliente()
     {
     }
 
     @Test
-    void getPreco()
+    void exibeClientesCadastrados()
     {
     }
 
     @Test
-    void setPreco()
+    void editaCliente()
     {
     }
 
     @Test
-    void testtoString()
+    void removeCliente()
     {
     }
 }

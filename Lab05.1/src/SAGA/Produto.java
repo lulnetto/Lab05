@@ -53,7 +53,7 @@ public class Produto {
 	 */
     @Override
     public String toString() {
-        return this.nome + " - " + this.descricao + " - R$" + this.preco;
+        return this.nome + " - " + this.descricao + " - R$" + String.format("%.2f",this.preco);
     }
 
     @Override
