@@ -1,7 +1,8 @@
 package SAGA;
 
-import java.util.Map;
-import java.util.TreeMap;
+import Util.NameComparator;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -23,7 +24,7 @@ public class ControllerCliente {
 
     /**
 	 * Adiciona um novo cliente valido apartir do seu cpf, nome, email e localizacao.
-	 * 
+	 *
 	 * @param cpf cpf do cliente.
 	 * @param nome nome do cliente.
 	 * @param email email do cliente.
@@ -43,7 +44,7 @@ public class ControllerCliente {
 
     /**
 	 * Exibe um cliente valido apartir do seu cpf.
-	 * 
+	 *
 	 * @param cpf cpf do cliente.
 	 * @return uma string que representa o cliente no formato NOME - LOCALIZACAO - EMAIL, ou Cliente não cadastrado. em demais casos.
 	 */
@@ -58,11 +59,14 @@ public class ControllerCliente {
 
      /**
 	 * Exibe todos clientes cadastrados.
-	 * 
+	 *
 	 * @return uma string que representa todos os clientes no formato NOME - LOCALIZACAO - EMAIL | NOME - LOCALIZACAO - EMAIL.
 	 */
     public String exibeClientesCadastrados()
     {
+//        ArrayList<Cliente> cl = new ArrayList();
+//        clientes.values().stream().map(cliente -> cl.add(cliente));
+//        Collections.sort(cl, new NameComparator());
 
         return clientes.values().stream().map(cliente -> cliente.toString()).collect(Collectors.joining(" | "));
 
@@ -106,7 +110,7 @@ public class ControllerCliente {
 
     /**
 	 * Remove um cliente valido apartir do seu cpf.
-	 * 
+	 *
 	 * @param cpf cpf do cliente.
 	 * @return retorna um booleano True se a remocao do cliente for um sucesso.
 	 */

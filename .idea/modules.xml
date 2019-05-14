@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/Lab05.iml" filepath="$PROJECT_DIR$/.idea/Lab05.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/Lab05.1/Lab05.1.iml" filepath="$PROJECT_DIR$/Lab05.1/Lab05.1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lab05.1/tests/tests.iml" filepath="$PROJECT_DIR$/Lab05.1/tests/tests.iml" />
->>>>>>> 5180036d5c1ddf70edd15d8f2c23568e5c96950b
     </modules>
   </component>
 </project>

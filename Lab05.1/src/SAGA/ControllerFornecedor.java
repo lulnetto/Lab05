@@ -1,6 +1,5 @@
 package SAGA;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
@@ -143,7 +142,7 @@ public class ControllerFornecedor {
         {
             throw new NullPointerException("Erro no cadastro de produto: fornecedor nao existe.");
         }
-        return this.fornecedores.get(nomeFornecedor).cadastraProduto(nome, descricao, preco);
+        return this.fornecedores.get(nomeFornecedor).cadastraProdutoSimples(nome, descricao, preco);
 
     }
 

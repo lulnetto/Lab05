@@ -1,5 +1,6 @@
 package SAGA;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -99,7 +100,7 @@ public class Fornecedor {
      * @param preco preco do produto.
 	 * @return um booleano caso o produto seja adicionado com sucesso.
 	 */
-    public boolean cadastraProduto(String nome, String descricao, double preco)
+    public boolean cadastraProdutoSimples(String nome, String descricao, double preco)
     {
 
         String chave = nome + descricao;
@@ -107,7 +108,22 @@ public class Fornecedor {
         {
             throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
         }
-        Produto produto = new Produto(nome, descricao, preco);
+        ProdutoSimples produto = new ProdutoSimples(nome, descricao, preco);
+        this.produtos.put(chave,produto);
+        return true;
+    }
+
+    public boolean cadastraProdutoCombo(String nome, String descricao, double preco, double desconto, String produtosCombo)
+    {
+
+        String chave = nome + descricao;
+        if (this.produtos.containsKey(chave))
+        {
+            throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
+        }
+        String[] produtosca = produtosCombo.split(", ");
+
+        ProdutoCombo produto = new ProdutoCombo(nome, descricao, preco, desconto, );
         this.produtos.put(chave,produto);
         return true;
     }
