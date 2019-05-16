@@ -9,15 +9,15 @@ public class ProdutoCombo implements Produto
     private String descricao;
     private double preco;
     private double desconto;
-    private Set<Produto> produtos;
+    private Set<ProdutoSimples> produtos;
 
-    public ProdutoCombo(String nome, String descricao, double preco, double desconto)
+    public ProdutoCombo(String nome, String descricao, double desconto, Set<ProdutoSimples> produtos)
     {
         this.nome = nome;
         this.descricao = descricao;
-        this.preco = preco;
+        this.preco = 0;
         this.desconto = desconto;
-        this.produtos = new HashSet<>();
+        this.produtos = produtos;
     }
 
 
