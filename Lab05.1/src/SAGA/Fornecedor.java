@@ -15,6 +15,7 @@ public class Fornecedor
     private String email;
     private String telefone;
     private Map<String, Produto> produtos;
+    private Map<String, Conta> contas;
 
     /**
      * Construtoi um novo fornecedor apatir do seu nome, email e telefone, e inicializa um HashMap de produtos desse fornecedor.
@@ -40,6 +41,7 @@ public class Fornecedor
         this.email = email;
         this.telefone = telefone;
         this.produtos = new TreeMap<>();
+        this.contas = new TreeMap<>();
     }
 
     /**
@@ -129,7 +131,7 @@ public class Fornecedor
         return true;
     }
 
-    public boolean cadastraProdutoCombo(String nome, String descricao, double preco, double desconto, String produtosCombo)
+    public boolean cadastraProdutoCombo(String nome, String descricao, double desconto, String produtosCombo)
     {
 
         String chave = getChave(nome, descricao);
@@ -137,18 +139,8 @@ public class Fornecedor
         {
             throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
         }
-        String[] produtosca = produtosCombo.split(", ");
-        Set<ProdutoSimples> produts = new HashSet<>();
 
-        for (String pro : produtosca)
-        {
-            if (this.produtos.get(pro) instanceof ProdutoSimples)
-            {
-                produts.add((ProdutoSimples) this.produtos.get(pro));
-            }
-        }
-
-        ProdutoCombo produto = new ProdutoCombo(nome, descricao, desconto, produts);
+        ProdutoCombo produto = new ProdutoCombo(nome, descricao, precoCombo(produtosCombo), desconto, setCombo(produtosCombo));
         this.produtos.put(chave, produto);
         return true;
     }
@@ -217,6 +209,24 @@ public class Fornecedor
         this.produtos.get(chave).setPreco(preco);
         return true;
     }
+    /**
+     * Edita o preco de um produto apartir do seu nome, descricao e do seu novo preco.
+     *
+     * @param nome      nome do produto.
+     * @param descricao descricao do produto.
+     * @param desconto     novo valor do produto.
+     * @return retorna um booleano True caso a edicao seja um sucesso.
+     */
+    public boolean editaDescontoProdutoCombo(String nome, String descricao, double desconto)
+    {
+        String chave = getChave(nome, descricao);
+        if (!this.produtos.containsKey(chave))
+        {
+            throw new NullPointerException("Erro na edicao de produto: produto nao existe.");
+        }
+        this.produtos.get(chave).setPreco(desconto);
+        return true;
+    }
 
     /**
      * Remove um produto do fornecedor apartir do nome do produto e sua descricao.
@@ -240,6 +250,35 @@ public class Fornecedor
     {
         String chave = a + " - " + b;
         return chave;
+    }
+
+    private Set<ProdutoSimples> setCombo(String produtosCombo)
+    {
+        String[] produtosca = produtosCombo.split(", ");
+        Set<ProdutoSimples> produts = new HashSet<>();
+
+        for (String pro : produtosca)
+        {
+            if (this.produtos.get(pro) instanceof ProdutoSimples)
+            {
+                produts.add((ProdutoSimples) this.produtos.get(pro));
+            }
+        }
+        return produts;
+    }
+    private double precoCombo(String produtosCombo)
+    {
+        String[] produtosca = produtosCombo.split(", ");
+        double preco = 0;
+
+        for (String pro : produtosca)
+        {
+            if (this.produtos.get(pro) instanceof ProdutoSimples)
+            {
+                preco += this.produtos.get(pro).getPreco();
+            }
+        }
+        return preco;
     }
 
 

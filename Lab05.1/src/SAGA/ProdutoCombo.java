@@ -11,16 +11,20 @@ public class ProdutoCombo implements Produto
     private double desconto;
     private Set<ProdutoSimples> produtos;
 
-    public ProdutoCombo(String nome, String descricao, double desconto, Set<ProdutoSimples> produtos)
+    public ProdutoCombo(String nome, String descricao, double preco, double desconto, Set<ProdutoSimples> produtos)
     {
         this.nome = nome;
         this.descricao = descricao;
-        this.preco = 0;
+        this.preco = preco;
         this.desconto = desconto;
         this.produtos = produtos;
     }
 
-
+    @Override
+    public String toString()
+    {
+        return this.nome + " - " + this.descricao + " - R$" + String.format("%.2f",this.getPreco());
+    }
 
     @Override
     public String getNome()
@@ -37,12 +41,12 @@ public class ProdutoCombo implements Produto
     @Override
     public double getPreco()
     {
-        return this.preco;
+        return this.preco*this.desconto;
     }
 
     @Override
-    public void setPreco(double preco)
+    public void setPreco(double desconto)
     {
-
+        this.desconto = desconto;
     }
 }
