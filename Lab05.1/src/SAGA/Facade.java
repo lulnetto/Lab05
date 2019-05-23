@@ -3,19 +3,19 @@ package SAGA;
 import easyaccept.EasyAccept;
 
 public class Facade {
-    private ControllerCliente cc;
-    private ControllerFornecedor cf;
+    private Controller cc;
 
     public static void main(String[] args)
     {
-        args = new String[]{"SAGA.Facade","Lab05.1/acceptance_test/use_case_1.txt","Lab05.1/acceptance_test/use_case_2.txt","Lab05.1/acceptance_test/use_case_3.txt"};
+        args = new String[]{"SAGA.Facade","Lab05.1/acceptance_test/use_case_1.txt","Lab05.1/acceptance_test/use_case_2.txt",
+                "Lab05.1/acceptance_test/use_case_3.txt","Lab05.1/acceptance_test/use_case_4.txt","Lab05.1/acceptance_test/use_case_5.txt",
+                "Lab05.1/acceptance_test/use_case_6.txt"};
         EasyAccept.main(args);
     }
 
     public Facade()
     {
-        this.cc = new ControllerCliente();
-        this.cf = new ControllerFornecedor();
+        this.cc = new Controller();
     }
 
     public String adicionaCliente(String cpf, String nome, String email, String localizacao)
@@ -28,7 +28,7 @@ public class Facade {
        return cc.exibeCliente(cpf);
     }
 
-    public String exibeClientesCadastrados()
+    public String exibeClientes()
     {
         return cc.exibeClientesCadastrados();
     }
@@ -45,58 +45,73 @@ public class Facade {
 
     public String adicionaFornecedor(String nome, String email, String telefone)
     {
-        return cf.adicionaFornecedor(nome, email, telefone);
+        return cc.adicionaFornecedor(nome, email, telefone);
     }
 
     public String exibeFornecedor(String nome)
     {
-        return cf.exibeFornecedor(nome);
+        return cc.exibeFornecedor(nome);
     }
 
-    public String exibeFornecedoresCadastrados()
+    public String exibeFornecedores()
     {
-        return cf.exibeFornecedoresCadastrados();
+        return cc.exibeFornecedoresCadastrados();
     }
 
     public boolean editaFornecedor(String nome, String atributo, String novoValor)
     {
-        return cf.editaFornecedor(nome, atributo, novoValor);
+        return cc.editaFornecedor(nome, atributo, novoValor);
     }
 
     public boolean removeFornecedor(String nome)
     {
-        return cf.removeFornecedor(nome);
+        return cc.removeFornecedor(nome);
     }
 
     public boolean adicionaProduto(String fornecedor, String nome, String descricao, double preco)
     {
-        return cf.adicionaProduto(fornecedor, nome, descricao, preco);
+        return cc.adicionaProduto(fornecedor, nome, descricao, preco);
 
     }
 
     public String exibeProduto(String nome, String descricao, String fornecedor)
     {
-        return cf.exibeProduto(nome, descricao, fornecedor);
+        return cc.exibeProduto(nome, descricao, fornecedor);
     }
 
-    public String exibeTodosProduto(String nomeFornecedor, String nome, String descricao)
+    public String exibeTodosProduto(String nomeFornecedor)
     {
-        return cf.exibeTodosProduto(nomeFornecedor);
+        return cc.exibeTodosProduto(nomeFornecedor);
     }
 
     public String exibeTodosProdutoFornecedores()
     {
-        return cf.exibeTodosProdutoFornecedores();
+        return cc.exibeTodosProdutoFornecedores();
     }
 
     public boolean editaProduto(String nome, String descricao, String fornecedor, double novoPreco)
     {
-        return cf.editaProduto(fornecedor, nome, descricao, novoPreco);
+        return cc.editaProduto(fornecedor, nome, descricao, novoPreco);
     }
 
     public boolean removeProduto(String nome, String descricao,String fornecedor)
     {
-        return cf.removeProduto(fornecedor, nome, descricao);
+        return cc.removeProduto(fornecedor, nome, descricao);
+    }
+
+    public boolean adicionaCompra(String cpf, String nomeFornecedor, String data, String nomeProduto, String descricaoProduto)
+    {
+        return this.cc.adicionaCompra(cpf, nomeFornecedor, data, nomeProduto, descricaoProduto);
+    }
+
+    public double getDebito(String cpf, String nomeFornecedor)
+    {
+        return this.cc.getDebito(cpf,nomeFornecedor);
+    }
+
+    public String exibeContas(String cpf, String nomeFornecedor)
+    {
+        return this.cc.exibeContas(cpf, nomeFornecedor);
     }
 
 

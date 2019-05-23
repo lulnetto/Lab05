@@ -249,5 +249,32 @@ public class ControllerFornecedor {
         return this.fornecedores.get(nomeFornecedor).removeProduto(nome, descricao);
     }
 
+    public boolean adicionaCompra(String cpf, String nomeFornecedor, String data, String nomeProduto, String descricaoProduto)
+    {
+        if (!this.fornecedores.containsKey(nomeFornecedor))
+        {
+            throw new IllegalArgumentException();
+        }
+        else
+        {
+            return this.fornecedores.get(nomeFornecedor).realizaCompra(cpf, data, nomeProduto, descricaoProduto);
+        }
+    }
+
+    public double getDebito(String cpf, String nomeFornecedor)
+    {
+        if (!this.fornecedores.containsKey(nomeFornecedor))
+        {
+            throw new IllegalArgumentException();
+        } else return this.fornecedores.get(nomeFornecedor).getDebito(cpf);
+    }
+
+    public String exibeContas(String cpf, String nomeFornecedor)
+    {
+        if (!this.fornecedores.containsKey(nomeFornecedor))
+        {
+            throw new IllegalArgumentException();
+        } else return this.fornecedores.get(nomeFornecedor).getNome() + " | " + this.fornecedores.get(nomeFornecedor).exibeContas(cpf);
+    }
 
 }

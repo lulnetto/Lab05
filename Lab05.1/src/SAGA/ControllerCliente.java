@@ -124,5 +124,15 @@ public class ControllerCliente {
         return true;
     }
 
+    public boolean existeCliente(String cpf)
+    {
+        return clientes.containsKey(cpf);
+    }
+
+    public String getNome(String cpf)
+    {
+        return this.clientes.get(cpf).getNome();
+    }
+
 
 }

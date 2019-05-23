@@ -281,5 +281,27 @@ public class Fornecedor
         return preco;
     }
 
+    public boolean realizaCompra(String cpf, String data, String nome, String descricao)
+    {
+        String chave = getChave(nome,descricao);
+        double preco = produtos.get(chave).getPreco();
+        if (this.contas.containsKey(cpf))
+        {
+            return contas.get(cpf).cadastraCompra(data, nome, preco);
+        } else
+        {
+            contas.put(cpf, new Conta());
+            return contas.get(cpf).cadastraCompra(data, nome, preco);
+        }
+    }
 
+    public double getDebito(String cpf)
+    {
+        return this.contas.get(cpf).getDebito();
+    }
+
+    public String exibeContas(String cpf)
+    {
+        return this.contas.get(cpf).exibeContas();
+    }
 }
