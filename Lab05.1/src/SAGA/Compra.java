@@ -31,6 +31,6 @@ public class Compra
     @Override
     public String toString()
     {
-        return this.produto;
+        return this.produto + " - " + this.data;
     }
 }
