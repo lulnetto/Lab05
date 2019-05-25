@@ -33,14 +33,14 @@ public class Conta
 
     public String exibeContas()
     {
-        String msg = "";
-        for (Compra compra: this.compras)
-        {
-            msg += compra.getProduto() + " - " + compra.getData() + " | ";
-        }
-        return msg.substring(0,msg.length()-3);
+//        String msg = "";
+//        for (Compra compra: this.compras)
+//        {
+//            msg += compra.toString() + " | ";
+//        }
+//        return msg.substring(0,msg.length()-3);
 
-//        return this.compras.stream().map(compra -> compra.getProduto()).collect(Collectors.joining(" | "));
+        return this.compras.stream().map(compra -> compra.toString()).collect(Collectors.joining(" | "));
     }
 
 
